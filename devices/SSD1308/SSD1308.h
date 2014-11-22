@@ -1,13 +1,3 @@
-// I2Cdev library collection - SSD1308 I2C device class header file
-// Based on Solomon Systech SSD1308 datasheet, rev. 1, 10/2008
-// 8/25/2011 by Andrew Schamp <schamp@gmail.com>
-//
-// This I2C device library is using (and submitted as a part of) Jeff Rowberg's I2Cdevlib library,
-// which should (hopefully) always be available at https://github.com/jrowberg/i2cdevlib
-//
-// Changelog:
-//     2011-08-25 - initial release
-        
 /* ============================================
 I2Cdev device library code is placed under the MIT license
 Copyright (c) 2011 Andrew Schamp
@@ -29,8 +19,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-===============================================
-*/
+=============================================== */
 
 #ifndef _SSD1308_h_
 #define _SSD1308_h_

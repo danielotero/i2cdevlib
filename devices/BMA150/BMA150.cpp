@@ -1,11 +1,3 @@
-// I2Cdev library collection - BMA150 I2C device class header file
-// Based on BMA150 datasheet, 29/05/2008
-// 01/18/2012 by Brian McCain <bpmccain@gmail.com>
-// Updates should (hopefully) always be available at https://github.com/jrowberg/i2cdevlib
-//
-// Changelog:
-//     2012-01-18 - initial release
-
 /* ============================================
 I2Cdev device library code is placed under the MIT license
 Copyright (c) 2011 Jeff Rowberg
@@ -27,8 +19,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-===============================================
-*/
+=============================================== */
 
 #include "BMA150.h"
 

@@ -1,12 +1,3 @@
-// I2Cdev library collection - MYDEVSTUB I2C device class header file
-// Based on [Manufacturer Name] MYDEVSTUB datasheet, [datasheet date]
-// [current release date] by [Author Name] <[Author Email]>
-// Updates should (hopefully) always be available at https://github.com/jrowberg/i2cdevlib
-//
-// Changelog:
-//     [YYYY-mm-dd] - updated some broken thing
-//     [YYYY-mm-dd] - initial release
-
 /* ============================================
 I2Cdev device library code is placed under the MIT license
 Copyright (c) 2011 [Author Name], Jeff Rowberg
@@ -28,8 +19,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-===============================================
-*/
+=============================================== */
 
 #ifndef _MYDEVSTUB_H_
 #define _MYDEVSTUB_H_

@@ -1,14 +1,3 @@
-// I2Cdev library collection - MPR121 I2C device class header file
-// Based on Freescale MPR121 datasheet rev. 2, 04/2010 and Freescale App Note 3944, rev 1 3/26/2010
-// 9/3/2011 by Andrew Schamp <schamp@gmail.com>
-//
-// This I2C device library is using (and submitted as a part of) Jeff Rowberg's I2Cdevlib library,
-// which should (hopefully) always be available at https://github.com/jrowberg/i2cdevlib
-//
-// Changelog:
-//     2011-09-03 - add callback support
-//     2011-08-20 - initial release
-
 /* ============================================
 I2Cdev device library code is placed under the MIT license
 Copyright (c) 2011 Andrew Schamp
@@ -30,8 +19,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-===============================================
-*/
+=============================================== */
 
 #include "MPR121.h"
 #include "I2Cdev.h"

@@ -1,15 +1,3 @@
-// I2Cdev library collection - DS1307 I2C device class
-// Based on Maxim DS1307 datasheet, 2008
-// 11/13/2011 by Jeff Rowberg <jeff@rowberg.net>
-// Updates should (hopefully) always be available at https://github.com/jrowberg/i2cdevlib
-// I2C Device Library hosted at http://www.i2cdevlib.com
-//
-// Changelog:
-//     2011-11-13 - initial release
-//     2012-03-29 - alain.spineux@gmail.com: bug in getHours24()
-//                  am/pm is bit 0x20 instead of 0x80
-//
-
 /* ============================================
 I2Cdev device library code is placed under the MIT license
 Copyright (c) 2011 Jeff Rowberg
@@ -31,8 +19,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-===============================================
-*/
+=============================================== */
 
 #include "DS1307.h"
 

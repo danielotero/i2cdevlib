@@ -1,13 +1,3 @@
-// I2Cdev library collection - AD7746 I2C device class header file
-// Based on Analog Devices AD7746 Datasheet, Revision 0, 2005
-// 2012-04-01 by Peteris Skorovs <pskorovs@gmail.com>
-//
-// This I2C device library is using (and submitted as a part of) Jeff Rowberg's I2Cdevlib library,
-// which should (hopefully) always be available at https://github.com/jrowberg/i2cdevlib
-//
-// Changelog:
-//     2012-04-01 - initial release
-
 /* ============================================
 I2Cdev device library code is placed under the MIT license
 Copyright (c) 2012 Peteris Skorovs
@@ -29,8 +19,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-===============================================
-*/
+=============================================== */
 
 #ifndef _AD7746_H_
 #define _AD7746_H_

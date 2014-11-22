@@ -1,15 +1,3 @@
-// I2Cdev library collection - ADS1115 I2C device class header file
-// Based on Texas Instruments ADS1113/4/5 datasheet, May 2009 (SBAS444B, revised October 2009)
-// Note that the ADS1115 uses 16-bit registers, not 8-bit registers.
-// 8/2/2011 by Jeff Rowberg <jeff@rowberg.net>
-// Updates should (hopefully) always be available at https://github.com/jrowberg/i2cdevlib
-//
-// Changelog:
-//     2013-05-05 - Add debug information.  Clean up Single Shot implementation
-//     2011-10-29 - added getDifferentialx() methods, F. Farzanegan
-//     2011-08-02 - initial release
-
-
 /* ============================================
 I2Cdev device library code is placed under the MIT license
 Copyright (c) 2011 Jeff Rowberg
@@ -31,8 +19,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-===============================================
-*/
+=============================================== */
 
 #ifndef _ADS1115_H_
 #define _ADS1115_H_

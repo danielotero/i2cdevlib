@@ -1,11 +1,3 @@
-// I2Cdev library collection - ITG3200 I2C device class
-// Based on InvenSense ITG-3200 datasheet rev. 1.4, 3/30/2010 (PS-ITG-3200A-00-01.4)
-// 7/31/2011 by Jeff Rowberg <jeff@rowberg.net>
-// Updates should (hopefully) always be available at https://github.com/jrowberg/i2cdevlib
-//
-// Changelog:
-//     2011-07-31 - initial release
-
 /* ============================================
 I2Cdev device library code is placed under the MIT license
 Copyright (c) 2011 Jeff Rowberg
@@ -27,8 +19,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-===============================================
-*/
+=============================================== */
 
 #include "ITG3200.h"
 
@@ -495,7 +486,9 @@ uint8_t ITG3200::getClockSource() {
     return buffer[0];
 }
 /** Set clock source setting.
- * On power up, the ITG-3200 defaults to the internal oscillator. It is highly recommended that the device is configured to use one of the gyros (or an external clock) as the clock reference, due to the improved stability.
+ * On power up, the ITG-3200 defaults to the internal oscillator. It is highly
+ * recommended that the device is configured to use one of the gyros (or an
+ * external clock) as the clock reference, due to the improved stability.
  *
  * The CLK_SEL setting determines the device clock source as follows:
  *
