@@ -64,7 +64,7 @@ void HMC5843::initialize() {
 
     // write CONFIG_B register
     setGain(HMC5843_GAIN_1300);
-    
+
     // write MODE register
     setMode(HMC5843_MODE_SINGLE);
 }

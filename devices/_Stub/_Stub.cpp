@@ -105,20 +105,20 @@ THE SOFTWARE.
 
    Note that ALL OF THESE METHODS ARE STATIC. No I2Cdev object is needed; just
    use the static class methods.
-   
+
    Also note that the first two parameters of every one of these methods are
    the same: "devAddr" and "regAddr". For every method, you need to specify the
    target/slave address and the register address.
-   
+
    If your device uses 8-bit registers, you will want to use the following:
        readBit, readBits, readByte, readBytes
        writeBit, writeBits, writeByte, writeBytes
-       
+
    ...but if it uses 16-bit registers, you will want to use these instead:
        readBitW, readBitsW, readWord, readWords
        writeBitW, writeBitsW, writeWord, writeWords
-       
-   Here's a sample of how to use a few of the methods. Note that in each case, 
+
+   Here's a sample of how to use a few of the methods. Note that in each case,
    the "buffer" variable is a uint8_t array or pointer, and the "value" variable
    (in three of the write examples) is a uint8_t single byte. The multi-byte
    write methods still require an array or pointer.
@@ -146,7 +146,7 @@ THE SOFTWARE.
 
        WRITE 2 BYTES TO DEVICE 0x68, REGISTER 0x02 (AND 0x03 FOR 2ND BYTE)
        status = I2Cdev::writeBytes(0x68, 0x02, 2, buffer);
-       
+
    The word-based methods are exactly the same, except they use 16-bit variables
    instead of 8-bit ones.
 

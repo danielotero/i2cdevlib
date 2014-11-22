@@ -58,7 +58,7 @@ ADS1115::ADS1115(uint8_t address) {
  * This device is ready to use automatically upon power-up. It defaults to
  * single-shot read mode, P0/N1 mux, 2.048v gain, 128 samples/sec, default
  * comparator with hysterysis, active-low polarity, non-latching comparator,
- * and comparater-disabled operation. 
+ * and comparater-disabled operation.
  */
 void ADS1115::initialize() {
   setMultiplexer(ADS1115_MUX_P0_N1);
@@ -84,9 +84,9 @@ bool ADS1115::testConnection() {
  * conversion is finished, then return;
  * @see ADS1115_OS_INACTIVE
  */
-void ADS1115::waitBusy(uint16_t max_retries) {  
+void ADS1115::waitBusy(uint16_t max_retries) {
   for(uint16_t i = 0; i < max_retries; i++) {
-    if (getOpStatus()==ADS1115_OS_INACTIVE) break;    
+    if (getOpStatus()==ADS1115_OS_INACTIVE) break;
   }
 }
 
@@ -127,11 +127,11 @@ void ADS1115::waitBusy(uint16_t max_retries) {
  * @see ADS1115_MUX_P3_NG
  */
 int16_t ADS1115::getConversion() {
-    if (devMode == ADS1115_MODE_SINGLESHOT) 
-    {  
+    if (devMode == ADS1115_MODE_SINGLESHOT)
+    {
       setOpStatus(ADS1115_OS_ACTIVE);
       ADS1115::waitBusy(I2CDEV_DEFAULT_READ_TIMEOUT);
-      
+
     }
     I2Cdev::readWord(devAddr, ADS1115_RA_CONVERSION, buffer);
     return buffer[0];
@@ -236,63 +236,63 @@ int16_t ADS1115::getConversionP3GND() {
  *
  */
 float ADS1115::getMilliVolts() {
-  switch (pgaMode) { 
+  switch (pgaMode) {
     case ADS1115_PGA_6P144:
       return (getConversion() * ADS1115_MV_6P144);
-      break;    
+      break;
     case ADS1115_PGA_4P096:
       return (getConversion() * ADS1115_MV_4P096);
-      break;             
-    case ADS1115_PGA_2P048:    
+      break;
+    case ADS1115_PGA_2P048:
       return (getConversion() * ADS1115_MV_2P048);
-      break;       
-    case ADS1115_PGA_1P024:     
+      break;
+    case ADS1115_PGA_1P024:
       return (getConversion() * ADS1115_MV_1P024);
-      break;       
-    case ADS1115_PGA_0P512:      
+      break;
+    case ADS1115_PGA_0P512:
       return (getConversion() * ADS1115_MV_0P512);
-      break;       
-    case ADS1115_PGA_0P256:           
-    case ADS1115_PGA_0P256B:          
-    case ADS1115_PGA_0P256C:      
+      break;
+    case ADS1115_PGA_0P256:
+    case ADS1115_PGA_0P256B:
+    case ADS1115_PGA_0P256C:
       return (getConversion() * ADS1115_MV_0P256);
-      break;       
+      break;
   }
 }
 
 /**
  * Return the current multiplier for the PGA setting.
- * 
+ *
  * This may be directly retreived by using getMilliVolts(),
  * but this causes an independent read.  This function could
  * be used to average a number of reads from the getConversion()
- * getConversionx() functions and cut downon the number of 
+ * getConversionx() functions and cut downon the number of
  * floating-point calculations needed.
  *
  */
- 
+
 float ADS1115::getMvPerCount() {
   switch (pgaMode) {
     case ADS1115_PGA_6P144:
       return ADS1115_MV_6P144;
-      break;    
+      break;
     case ADS1115_PGA_4P096:
       return  ADS1115_MV_4P096;
-      break;             
-    case ADS1115_PGA_2P048:    
+      break;
+    case ADS1115_PGA_2P048:
       return ADS1115_MV_2P048;
-      break;       
-    case ADS1115_PGA_1P024:     
+      break;
+    case ADS1115_PGA_1P024:
       return ADS1115_MV_1P024;
-      break;       
-    case ADS1115_PGA_0P512:      
+      break;
+    case ADS1115_PGA_0P512:
       return ADS1115_MV_0P512;
-      break;       
-    case ADS1115_PGA_0P256:           
-    case ADS1115_PGA_0P256B:          
-    case ADS1115_PGA_0P256C:      
+      break;
+    case ADS1115_PGA_0P256:
+    case ADS1115_PGA_0P256B:
+    case ADS1115_PGA_0P256C:
       return ADS1115_MV_0P256;
-      break;       
+      break;
   }
 }
 
@@ -315,7 +315,7 @@ uint8_t ADS1115::getOpStatus() {
  * @see ADS1115_RA_CONFIG
  * @see ADS1115_CFG_OS_BIT
  */
-void ADS1115::setOpStatus(uint8_t status) { 
+void ADS1115::setOpStatus(uint8_t status) {
     I2Cdev::writeBitW(devAddr, ADS1115_RA_CONFIG, ADS1115_CFG_OS_BIT, status);
 }
 /** Get multiplexer connection.
@@ -355,7 +355,7 @@ void ADS1115::setMultiplexer(uint8_t mux) {
           setMode(ADS1115_MODE_CONTINUOUS);
         }
     }
-    
+
 }
 /** Get programmable gain amplifier level.
  * @return Current programmable gain amplifier level
@@ -368,7 +368,7 @@ uint8_t ADS1115::getGain() {
     pgaMode=(uint8_t)buffer[0];
     return pgaMode;
 }
-/** Set programmable gain amplifier level.  
+/** Set programmable gain amplifier level.
  * Continous mode may fill the conversion register
  * with data before the gain setting has taken effect.  A stop/start of the conversion
  * is done to reset the values.
@@ -584,11 +584,11 @@ uint16_t shiftDown(uint16_t extractFrom, int places)
 }
 
 
-uint16_t getValueFromBits(uint16_t extractFrom, int high, int length) 
+uint16_t getValueFromBits(uint16_t extractFrom, int high, int length)
 {
    int low= high-length +1;
    uint16_t mask = createMask(low ,high);
-   return shiftDown(extractFrom & mask, low); 
+   return shiftDown(extractFrom & mask, low);
 }
 
 /** Show all the config register settings
@@ -596,48 +596,48 @@ uint16_t getValueFromBits(uint16_t extractFrom, int high, int length)
 void ADS1115::showConfigRegister()
 {
     I2Cdev::readWord(devAddr, ADS1115_RA_CONFIG, buffer);
-    uint16_t configRegister =buffer[0];    
-    
-    
+    uint16_t configRegister =buffer[0];
+
+
     #ifdef ADS1115_SERIAL_DEBUG
       Serial.print("Register is:");
       Serial.println(configRegister,BIN);
-  
+
       Serial.print("OS:\t");
-      Serial.println(getValueFromBits(configRegister, 
+      Serial.println(getValueFromBits(configRegister,
         ADS1115_CFG_OS_BIT,1), BIN);
       Serial.print("MUX:\t");
-      Serial.println(getValueFromBits(configRegister,  
+      Serial.println(getValueFromBits(configRegister,
         ADS1115_CFG_MUX_BIT,ADS1115_CFG_MUX_LENGTH), BIN);
-        
+
       Serial.print("PGA:\t");
-      Serial.println(getValueFromBits(configRegister, 
+      Serial.println(getValueFromBits(configRegister,
         ADS1115_CFG_PGA_BIT,ADS1115_CFG_PGA_LENGTH), BIN);
-        
+
       Serial.print("MODE:\t");
       Serial.println(getValueFromBits(configRegister,
         ADS1115_CFG_MODE_BIT,1), BIN);
-        
+
       Serial.print("DR:\t");
-      Serial.println(getValueFromBits(configRegister, 
+      Serial.println(getValueFromBits(configRegister,
         ADS1115_CFG_DR_BIT,ADS1115_CFG_DR_LENGTH), BIN);
-        
+
       Serial.print("CMP_MODE:\t");
-      Serial.println(getValueFromBits(configRegister, 
+      Serial.println(getValueFromBits(configRegister,
         ADS1115_CFG_COMP_MODE_BIT,1), BIN);
-        
+
       Serial.print("CMP_POL:\t");
-      Serial.println(getValueFromBits(configRegister, 
+      Serial.println(getValueFromBits(configRegister,
         ADS1115_CFG_COMP_POL_BIT,1), BIN);
-        
+
       Serial.print("CMP_LAT:\t");
-      Serial.println(getValueFromBits(configRegister, 
+      Serial.println(getValueFromBits(configRegister,
         ADS1115_CFG_COMP_LAT_BIT,1), BIN);
-        
+
       Serial.print("CMP_QUE:\t");
-      Serial.println(getValueFromBits(configRegister, 
+      Serial.println(getValueFromBits(configRegister,
         ADS1115_CFG_COMP_QUE_BIT,ADS1115_CFG_COMP_QUE_LENGTH), BIN);
     #endif
-    
+
 };
 

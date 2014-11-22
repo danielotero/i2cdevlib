@@ -48,7 +48,7 @@ BMA150::BMA150(uint8_t address) {
     devAddr = address;
 }
 
-/** Power on and prepare for general usage. This sets the full scale range of 
+/** Power on and prepare for general usage. This sets the full scale range of
  * the sensor, as well as the bandwidth
  */
 void BMA150::initialize() {
@@ -85,7 +85,7 @@ uint8_t BMA150::getDeviceID() {
     I2Cdev::readByte(devAddr, BMA150_RA_VERSION, buffer);
     return buffer[0];
 }
-		
+
 // AXIS registers
 /** Get 3-axis accelerometer readings.
  * @param x 16-bit signed integer container for X-axis acceleration
@@ -154,7 +154,7 @@ bool BMA150::newDataZ() {
     I2Cdev::readBit(devAddr, BMA150_RA_Z_AXIS_LSB, BMA150_Z_NEW_DATA_BIT, buffer);
 	return buffer[0];
 }
-				
+
 // TEMP register
 /** Check for current temperature
  * @return Current Temperature in 0.5C increments from -30C at 00h
@@ -164,7 +164,7 @@ int8_t BMA150::getTemperature() {
     I2Cdev::readByte(devAddr, BMA150_RA_TEMP_RD, buffer);
     return buffer[0];
 }
-		
+
 // SMB150 registers
 bool BMA150::getStatusHG() {
     I2Cdev::readBit(devAddr, BMA150_RA_SMB150_STATUS, BMA150_STATUS_HG_BIT, buffer);
@@ -390,7 +390,7 @@ void BMA150::setSPI4(bool enabled) {
     I2Cdev::writeBit(devAddr, BMA150_RA_SMB150_CONF2, BMA150_SPI4_BIT, enabled);
 }
 
-		
+
 // LG / HG registers
 uint8_t BMA150::getLGThreshold() {
     I2Cdev::readByte(devAddr, BMA150_RA_LG_THRESHOLD, buffer);
@@ -470,7 +470,7 @@ void BMA150::setMotionDuration(uint8_t mot_dur) {
     I2Cdev::writeBits(devAddr, BMA150_RA_HYSTERESIS, BMA150_ANY_MOTION_DUR_BIT, BMA150_ANY_MOTION_DUR_LENGTH, mot_dur);
 }
 
-	
+
 // CUSTOMER registers
 uint8_t BMA150::getCustom1() {
     I2Cdev::readByte(devAddr, BMA150_RA_CUSTOMER1, buffer);
@@ -489,7 +489,7 @@ uint8_t BMA150::getCustom2() {
 void BMA150::setCustom2(uint8_t custom2) {
     I2Cdev::writeByte(devAddr, BMA150_RA_CUSTOMER2, custom2);
 }
-	
+
 // RANGE / BANDWIDTH registers
 
 /** Get Sensor Full Range

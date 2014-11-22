@@ -7,7 +7,7 @@
 //
 // Changelog:
 //     2011-08-25 - initial release
-        
+
 /* ============================================
 I2Cdev device library code is placed under the MIT license
 Copyright (c) 2011 Andrew Schamp
@@ -44,7 +44,7 @@ SSD1308::SSD1308(uint8_t address) :
 {
 }
 
-void SSD1308::initialize() 
+void SSD1308::initialize()
 {
   setHorizontalAddressingMode();
   clearDisplay();
@@ -86,7 +86,7 @@ void SSD1308::writeChar(char chr)
   const uint8_t char_index = chr - 0x20;
   for (uint8_t i = 0; i < 8; i++) {
      const uint8_t b = pgm_read_byte( &fontData[char_index][i] );
-     sendData( b ); 
+     sendData( b );
   }
 //#endif
 }
@@ -112,7 +112,7 @@ void SSD1308::writeString(uint8_t row, uint8_t col, uint16_t len, const char * t
     bool wrapEntireScreen = false;
     while (index + 1 < len) {
        writeChar(text[index++]);
-       // if we've written the last character space on the screen, 
+       // if we've written the last character space on the screen,
        // reset the page and column address so that it wraps around from the top again
        if (!wrapEntireScreen && (row*CHARS + col + index) > 127) {
          setPageAddress(0, MAX_PAGE);
@@ -145,21 +145,21 @@ void SSD1308::sendData(uint8_t len, uint8_t* data)
 
 void SSD1308::setHorizontalAddressingMode()
 {
-  setMemoryAddressingMode(HORIZONTAL_ADDRESSING_MODE); 
+  setMemoryAddressingMode(HORIZONTAL_ADDRESSING_MODE);
 }
 void SSD1308::setVerticalAddressingMode()
 {
-  setMemoryAddressingMode(VERTICAL_ADDRESSING_MODE); 
+  setMemoryAddressingMode(VERTICAL_ADDRESSING_MODE);
 }
 void SSD1308::setPageAddressingMode()
 {
-  setMemoryAddressingMode(PAGE_ADDRESSING_MODE); 
+  setMemoryAddressingMode(PAGE_ADDRESSING_MODE);
 }
-    
+
 void SSD1308::setMemoryAddressingMode(uint8_t mode)
 {
   uint8_t cmds[2] = { SET_MEMORY_ADDRESSING_MODE, mode };
-  sendCommands(2, cmds); 
+  sendCommands(2, cmds);
 }
 
 void SSD1308::setDisplayOn()
@@ -181,15 +181,15 @@ void SSD1308::setDisplayPower(bool on)
   }
 }
 
-void SSD1308::setPageAddress(uint8_t start, uint8_t end) 
+void SSD1308::setPageAddress(uint8_t start, uint8_t end)
 {
   uint8_t data[3] = { SET_PAGE_ADDRESS, start, end };
-  sendCommands(3, data);  
+  sendCommands(3, data);
 }
 
-void SSD1308::setColumnAddress(uint8_t start, uint8_t end) 
+void SSD1308::setColumnAddress(uint8_t start, uint8_t end)
 {
   uint8_t data[3] = { SET_COLUMN_ADDRESS, start, end };
-  sendCommands(3, data);  
+  sendCommands(3, data);
 }
 
