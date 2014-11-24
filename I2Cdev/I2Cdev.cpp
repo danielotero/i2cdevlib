@@ -39,18 +39,8 @@ THE SOFTWARE.
 
 #if (I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE)
     #ifdef I2CDEV_IMPLEMENTATION_WARNINGS
-        #if (ARDUINO < 100)
-            #warning Using outdated Arduino IDE with Wire library is functionally limiting.
-            #warning Arduino IDE v1.0.1+ with I2Cdev Fastwire implementation is recommended.
-            #warning This I2Cdev implementation does not support:
-            #warning - Repeated starts conditions
-            #warning - Timeout detection (some Wire requests block forever)
-        #elif (ARDUINO == 100)
-            #warning Using outdated Arduino IDE with Wire library is functionally limiting.
-            #warning Arduino IDE v1.0.1+ with I2Cdev Fastwire implementation is recommended.
-            #warning This I2Cdev implementation does not support:
-            #warning - Repeated starts conditions
-            #warning - Timeout detection (some Wire requests block forever)
+        #if (ARDUINO <= 100)
+            #error Unsupported Arduino version (1.0.1+ needed)
         #elif (ARDUINO > 100)
             #warning Using current Arduino IDE with Wire library is functionally limiting.
             #warning Arduino IDE v1.0.1+ with I2CDEV_BUILTIN_FASTWIRE implementation is recommended.
