@@ -80,7 +80,8 @@ bool AK8975::getDataReady() {
 // H* registers
 void AK8975::getHeading(int16_t *x, int16_t *y, int16_t *z) {
     I2Cdev::writeByte(devAddr, AK8975_RA_CNTL, AK8975_MODE_SINGLE);
-    delay(10);
+    //TODO: Try to fix this delay without Arduino import
+    //delay(10);
     I2Cdev::readBytes(devAddr, AK8975_RA_HXL, 6, buffer);
     *x = (((int16_t)buffer[1]) << 8) | buffer[0];
     *y = (((int16_t)buffer[3]) << 8) | buffer[2];
@@ -88,19 +89,22 @@ void AK8975::getHeading(int16_t *x, int16_t *y, int16_t *z) {
 }
 int16_t AK8975::getHeadingX() {
     I2Cdev::writeByte(devAddr, AK8975_RA_CNTL, AK8975_MODE_SINGLE);
-    delay(10);
+    //TODO: Try to fix this delay without Arduino import
+    //delay(10);
     I2Cdev::readBytes(devAddr, AK8975_RA_HXL, 2, buffer);
     return (((int16_t)buffer[1]) << 8) | buffer[0];
 }
 int16_t AK8975::getHeadingY() {
     I2Cdev::writeByte(devAddr, AK8975_RA_CNTL, AK8975_MODE_SINGLE);
-    delay(10);
+    //TODO: Try to fix this delay without Arduino import
+    //delay(10);
     I2Cdev::readBytes(devAddr, AK8975_RA_HYL, 2, buffer);
     return (((int16_t)buffer[1]) << 8) | buffer[0];
 }
 int16_t AK8975::getHeadingZ() {
     I2Cdev::writeByte(devAddr, AK8975_RA_CNTL, AK8975_MODE_SINGLE);
-    delay(10);
+    //TODO: Try to fix this delay without Arduino import
+    //delay(10);
     I2Cdev::readBytes(devAddr, AK8975_RA_HZL, 2, buffer);
     return (((int16_t)buffer[1]) << 8) | buffer[0];
 }

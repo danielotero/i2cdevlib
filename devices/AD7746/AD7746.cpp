@@ -63,26 +63,16 @@ void AD7746::reset() {
     Serial.print(devAddr, HEX);
     Serial.print(") resetting");
     Serial.print("...");
-#endif    
+#endif
 
-#if ((I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE && ARDUINO < 100) || I2CDEV_IMPLEMENTATION == I2CDEV_BUILTIN_NBWIRE)
-    Wire.beginTransmission(devAddr);
-    Wire.send((uint8_t) AD7746_RESET); // send reset
-#elif (I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE && ARDUINO >= 100)
-    Wire.beginTransmission(devAddr);
-    Wire.write((uint8_t) AD7746_RESET); // send reset
-#endif
-#if ((I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE && ARDUINO < 100) || I2CDEV_IMPLEMENTATION == I2CDEV_BUILTIN_NBWIRE)
-    Wire.endTransmission();
-#elif (I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE && ARDUINO >= 100)
-    Wire.endTransmission();
-#endif
+    I2Cdev::writeBytes(devAddr, AD7746_RESET, 0, nullptr);
     
 #ifdef I2CDEV_SERIAL_DEBUG
     Serial.println(". Done.");
 #endif
     
-delay(1); //wait a tad for reboot
+    //TODO: Try to fix this delay without Arduino import
+    //delay(1); //wait a tad for reboot
 }
 
 

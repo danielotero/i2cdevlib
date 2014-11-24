@@ -23,6 +23,8 @@ THE SOFTWARE.
 
 #include "BMP085.h"
 
+#include <math.h>
+
 /**
  * Default constructor, uses default I2C device address.
  * @see BMP085_DEFAULT_ADDRESS
