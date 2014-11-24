@@ -73,25 +73,25 @@ class AK8975 {
     public:
         AK8975();
         AK8975(uint8_t address);
-        
+
         void initialize();
         bool testConnection();
 
         // WIA register
         uint8_t getDeviceID();
-        
+
         // INFO register
         uint8_t getInfo();
-        
+
         // ST1 register
         bool getDataReady();
-        
+
         // H* registers
         void getHeading(int16_t *x, int16_t *y, int16_t *z);
         int16_t getHeadingX();
         int16_t getHeadingY();
         int16_t getHeadingZ();
-        
+
         // ST2 register
         bool getOverflowStatus();
         bool getDataError();
@@ -100,13 +100,13 @@ class AK8975 {
         uint8_t getMode();
         void setMode(uint8_t mode);
         void reset();
-        
+
         // ASTC register
         void setSelfTest(bool enabled);
-        
+
         // I2CDIS
         void disableI2C(); // um, why...?
-        
+
         // ASA* registers
         void getAdjustment(int8_t *x, int8_t *y, int8_t *z);
         void setAdjustment(int8_t x, int8_t y, int8_t z);

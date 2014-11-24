@@ -204,7 +204,7 @@ class L3G4200D {
 
 		// WHO_AM_I register, read-only
         uint8_t getDeviceID();
-		
+
 		// CTRL_REG1 register, r/w
 		void setOutputDataRate(uint16_t rate);
 		uint16_t getOutputDataRate();
@@ -242,7 +242,7 @@ class L3G4200D {
 		bool getINT2FIFOOverrunInterruptEnabled();
 		void setINT2FIFOEmptyInterruptEnabled(bool enabled);
 		bool getINT2FIFOEmptyInterruptEnabled();
-		
+
 		// CTRL_REG4 register, r/w
 		void setBlockDataUpdateEnabled(bool enabled);
 		bool getBlockDataUpdateEnabled();
@@ -263,11 +263,11 @@ class L3G4200D {
 		bool getHighPassFilterEnabled();
 		void setDataFilter(uint8_t filter);
 		uint8_t getDataFilter();
-		
+
 		// REFERENCE/DATACAPTURE register, r/w
 		void setInterruptReference(uint8_t reference);
 		uint8_t getInterruptReference();
-		
+
 		// OUT_TEMP register, read-only
 		uint8_t getTemperature();
 
@@ -286,19 +286,19 @@ class L3G4200D {
         int16_t getAngularVelocityX();
 		int16_t getAngularVelocityY();
 		int16_t getAngularVelocityZ();
-		
+
 		// FIFO_CTRL register, r/w
 		void setFIFOMode(uint8_t mode);
 		uint8_t getFIFOMode();
 		void setFIFOThreshold(uint8_t wtm);
 		uint8_t getFIFOThreshold();
-		
+
 		// FIFO_SRC register, read-only
 		bool getFIFOAtWatermark();
 		bool getFIFOOverrun();
 		bool getFIFOEmpty();
 		uint8_t getFIFOStoredDataLevel();
-		
+
 		// INT1_CFG register, r/w
 		void setInterruptCombination(bool combination);
 		bool getInterruptCombination();
@@ -325,7 +325,7 @@ class L3G4200D {
 		bool getYLow();
 		bool getXHigh();
 		bool getXLow();
-		
+
 		// INT1_THS_* registers, r/w
 		void setXHighThreshold(uint8_t threshold);
 		uint8_t getXHighThreshold();

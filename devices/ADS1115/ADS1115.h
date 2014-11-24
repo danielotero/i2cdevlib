@@ -83,7 +83,7 @@ THE SOFTWARE.
 #define ADS1115_MV_1P024            0.031250
 #define ADS1115_MV_0P512            0.015625
 #define ADS1115_MV_0P256            0.007813
-#define ADS1115_MV_0P256B           0.007813 
+#define ADS1115_MV_0P256B           0.007813
 #define ADS1115_MV_0P256C           0.007813
 
 #define ADS1115_MODE_CONTINUOUS     0x00
@@ -122,22 +122,22 @@ class ADS1115 {
     public:
         ADS1115();
         ADS1115(uint8_t address);
-        
+
         void initialize();
         bool testConnection();
-        
+
         // SINGLE SHOT utilities
         void waitBusy(uint16_t max_retries);
 
         // Read the current CONVERSION register
         int16_t getConversion();
-        
+
         // Differential
         int16_t getConversionP0N1();
         int16_t getConversionP0N3();
         int16_t getConversionP1N3();
         int16_t getConversionP2N3();
-        
+
         // Single-ended
         int16_t getConversionP0GND();
         int16_t getConversionP1GND();
@@ -145,7 +145,7 @@ class ADS1115 {
         int16_t getConversionP3GND();
 
         // Utility
-        float getMilliVolts(); 
+        float getMilliVolts();
         float getMvPerCount();
 
         // CONFIG register
@@ -173,7 +173,7 @@ class ADS1115 {
         void setLowThreshold(int16_t threshold);
         int16_t getHighThreshold();
         void setHighThreshold(int16_t threshold);
-        
+
         // DEBUG
         void showConfigRegister();
 

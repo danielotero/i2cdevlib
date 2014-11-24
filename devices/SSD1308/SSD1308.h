@@ -110,83 +110,83 @@ THE SOFTWARE.
 class SSD1308
 {
   public:
-    
+
       // constructor
     // takes a 7-b I2C address to use (0x3C by default, assumes D/C# (pin 13) grounded)
     SSD1308(uint8_t address = SSD1308_DEFAULT_ADDRESS);
 
     void initialize();
     void clearDisplay();
-    void fillDisplay(); // crosshatches    
-    
+    void fillDisplay(); // crosshatches
+
     // x, y is position (x is row (i.e., page), y is character (0-15), starting at top-left)
     // text will wrap around until it is done.
     void writeString(uint8_t row, uint8_t col, uint16_t len, const char* txt);
-    
+
     //void setXY(uint8_t, uint8_t y);
 
     void setHorizontalAddressingMode();
     void setVerticalAddressingMode();
     void setPageAddressingMode();
-    
+
     void setMemoryAddressingMode(uint8_t mode);
-    
+
     // takes one byte, 0x00-0x0F
     void setLowerColumnStartAddressForPageAddressingMode(uint8_t address);
-    
+
     // takes one byte, 0x10-0x1F
     void setHigherColumnStartAddressForPageAddressingMode(uint8_t address);
-    
+
     // takes two bytes, start address and end address of display data RAM
     void setColumnAddress(uint8_t start, uint8_t end);
-    
+
     // takes two bytes, start address and end address of display data RAM
     void setPageAddress(uint8_t start, uint8_t end);
-    
+
     // takes one byte, PAGE0 - PAGE7
     void setPageStartForPageAddressingMode(uint8_t page);
-    
+
     // takes one byte, 0x40-0x7F
     void setDisplayStartLine(uint8_t line);
-    
+
     // takes one byte, 0x00 (lowest) - 0xFF (highest)
     void setContrastControl(uint8_t contrast);
-    
+
     void setEntireDisplayOn();
     void setEntireDisplayRAM();
     void setEntireDisplay(bool on);
     void setNormalDisplay();
     void setInverseDisplay();
-    
+
     // setMultiplexRatio
-    
+
     void setInternalIref();
     void setExternalIref();
-    
+
     void setDisplayOn();
     void setDisplayOff();
     void setDisplayPower(bool on);
-    
+
     // Set vertical shift by COM from 0 - 63 (0x00 - 0x3F)
     // set to 0x00 after RESET
     void setDisplayOffset(uint8_t offset);
-    
+
     // divide ratio 0x00-0x0F, value +1 (reset 0x00)
     // oscillator freq 0x00-0x0F (reset 0x08)
     void setDisplayClock(uint8_t divideRatio, uint8_t oscFreq);
-    
+
     // phase1 0x01-0x0F period of up to 15 DCLK clocks (reset 0x02, 0 is invalid)
     // phase2 0x01-0x0F period of up to 15 DCLK clocks (reset 0x02, 0 is invalid)
     void setPrechargePeriod(uint8_t phase1, uint8_t phase2);
-    
+
     #define VCOM_DESELECT_0_65 0x00
     #define VCOM_DESELECT_0_77 0x02
     #define VCOM_DESELECT_0_83 0x03
     void setVcomhDeselectLevel(uint8_t level);
-    
+
     // command for no operation
     void nop();
-    
+
     #define SCROLL_INTERVAL_5_FRAMES   0x00
     #define SCROLL_INTERVAL_64_FRAMES  0x01
     #define SCROLL_INTERVAL_128_FRAMES 0x02
@@ -200,18 +200,18 @@ class SSD1308
     // horizontal scroll by one column per interval
     // offset = 1 (0x01) to 63 (0x3F)
     void setContinuousVerticalAndHorizontalScroll(bool left, uint8_t start_page, uint8_t interval, uint8_t end_page, uint8_t offset);
-    
+
     // note, after deactivating scrolling, the RAM data needs to be rewritten
     void deactivateScroll();
     void activateScroll();
-    
+
     void setVerticalScrollArea(uint8_t topRowsFixed, uint8_t scrollRows);
 
     void sendData(uint8_t data);
     void sendData(uint8_t len, uint8_t* data);
     // write the configuration registers in accordance with the datasheet and app note 3944
 //    void initialize();
-    
+
     // returns true if the device is responding on the I2C bus
 //    bool testConnection();
 
@@ -226,7 +226,7 @@ class SSD1308
     void sendCommands(uint8_t len, uint8_t* buf);
 
     void writeChar(char chr);
-    
+
     uint8_t m_devAddr; // contains the I2C address of the device
 };
 

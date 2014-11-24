@@ -105,12 +105,12 @@ THE SOFTWARE.
             uint8_t minute() const      { return mm; }
             uint8_t second() const      { return ss; }
             uint8_t dayOfWeek() const;
-    
+
             // 32-bit times as seconds since 1/1/2000
             long secondstime() const;
             // 32-bit times as seconds since 1/1/1970
             uint32_t unixtime(void) const;
-        
+
         protected:
             uint8_t yOff, m, d, hh, mm, ss;
     };
@@ -151,7 +151,7 @@ class DS1307 {
         // DATE register
         uint8_t getDay(); // 1-31
         void setDay(uint8_t day);
-        
+
         // MONTH register
         uint8_t getMonth(); // 1-12
         void setMonth(uint8_t month);
@@ -159,7 +159,7 @@ class DS1307 {
         // YEAR register
         uint16_t getYear(); // 1970, 2000, 2011, etc
         void setYear(uint16_t year);
-        
+
         // CONTROL register
         bool getFixedOutputLevel();
         void setFixedOutputLevel(bool level);
@@ -167,7 +167,7 @@ class DS1307 {
         void setSquareWaveEnabled(bool enabled);
         uint8_t getSquareWaveRate();
         void setSquareWaveRate(uint8_t rate);
-        
+
         // RAM registers
         uint8_t getMemoryByte(uint8_t offset);
         void setMemoryByte(uint8_t offset, uint8_t value);
@@ -179,16 +179,16 @@ class DS1307 {
 
         void getTime12(uint8_t *hours, uint8_t *minutes, uint8_t *seconds, uint8_t *ampm);
         void setTime12(uint8_t hours, uint8_t minutes, uint8_t seconds, uint8_t ampm);
-        
+
         void getTime24(uint8_t *hours, uint8_t *minutes, uint8_t *seconds);
         void setTime24(uint8_t hours, uint8_t minutes, uint8_t seconds);
-        
+
         void getDateTime12(uint16_t *year, uint8_t *month, uint8_t *day, uint8_t *hours, uint8_t *minutes, uint8_t *seconds, uint8_t *ampm);
         void setDateTime12(uint16_t year, uint8_t month, uint8_t day, uint8_t hours, uint8_t minutes, uint8_t seconds, uint8_t ampm);
-        
+
         void getDateTime24(uint16_t *year, uint8_t *month, uint8_t *day, uint8_t *hours, uint8_t *minutes, uint8_t *seconds);
         void setDateTime24(uint16_t year, uint8_t month, uint8_t day, uint8_t hours, uint8_t minutes, uint8_t seconds);
-        
+
         #ifdef DS1307_INCLUDE_DATETIME_METHODS
             DateTime getDateTime();
             void setDateTime(DateTime dt);

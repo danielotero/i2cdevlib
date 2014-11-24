@@ -66,7 +66,7 @@ class BMP085 {
     public:
         BMP085();
         BMP085(uint8_t address);
-        
+
         void initialize();
         bool testConnection();
 

@@ -30,12 +30,12 @@ class TwoWire {
         static uint8_t rxBuffer[];
         static uint8_t rxBufferIndex;
         static uint8_t rxBufferLength;
-    
+
         static uint8_t txAddress;
         static uint8_t txBuffer[];
         static uint8_t txBufferIndex;
         static uint8_t txBufferLength;
-    
+
         // static uint8_t transmitting;
         static void (*user_onRequest)(void);
         static void (*user_onReceive)(int);

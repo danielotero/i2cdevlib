@@ -104,10 +104,10 @@ class ITG3200 {
     public:
         ITG3200();
         ITG3200(uint8_t address);
-        
+
         void initialize();
         bool testConnection();
-        
+
         // WHO_AM_I register
         uint8_t getDeviceID();
         void setDeviceID(uint8_t id);
@@ -121,7 +121,7 @@ class ITG3200 {
         void setFullScaleRange(uint8_t range);
         uint8_t getDLPFBandwidth();
         void setDLPFBandwidth(uint8_t bandwidth);
-        
+
         // INT_CFG register
         bool getInterruptMode();
         void setInterruptMode(bool mode);
@@ -139,10 +139,10 @@ class ITG3200 {
         // INT_STATUS register
         bool getIntDeviceReadyStatus();
         bool getIntDataReadyStatus();
-        
+
         // TEMP_OUT_* registers
         int16_t getTemperature();
-        
+
         // GYRO_*OUT_* registers
         void getRotation(int16_t* x, int16_t* y, int16_t* z);
         int16_t getRotationX();

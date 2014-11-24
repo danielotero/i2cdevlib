@@ -142,16 +142,16 @@ class BMA150 {
     public:
         BMA150();
         BMA150(uint8_t address);
-        
+
         void initialize();
         bool testConnection();
 
         // CHIP_ID register
         uint8_t getDeviceID();
-        
+
         // VERSION register
         uint8_t getChipRevision();
-        
+
         // AXIS registers
         void getAcceleration(int16_t* x, int16_t* y, int16_t* z);
         int16_t getAccelerationX();
@@ -160,10 +160,10 @@ class BMA150 {
         bool newDataX();
         bool newDataY();
         bool newDataZ();
-                
+
         // TEMP register
         int8_t getTemperature();
-        
+
         // SMB150 registers
         bool getStatusHG();
         bool getStatusLG();
@@ -177,7 +177,7 @@ class BMA150 {
         void setLGLatched(bool lg_latched);
         void setAlertPhase(bool alert_phase);
         void setSTResult(bool st_result);
-        
+
         bool getSleep();
         bool getSoftReset();
         bool getSelfTest0();
@@ -192,7 +192,7 @@ class BMA150 {
         void setEEW(bool eew);
         void setUpdateImage(bool update_image);
         void setResetINT(bool reset_int);
-        
+
         bool getEnableLG();
         bool getEnableHG();
         int8_t getCounterLG();
@@ -205,7 +205,7 @@ class BMA150 {
         void setCounterHG(int8_t counter_hg);
         void setAnyMotion(bool any_motion);
         void setAlert(bool alert);
-        
+
         bool getWakeUp();
         int8_t getWakeUpPause();
         bool getShadowDis();
@@ -219,8 +219,8 @@ class BMA150 {
         void setLatchInt(bool latch_int);
         void setNewDataInt(bool new_data_int);
         void setEnableAdvInt(bool enable_adv_int);
-        void setSPI4(bool spi4);    
-        
+        void setSPI4(bool spi4);
+
         // LG / HG registers
         uint8_t getLGThreshold();
         void  setLGThreshold(uint8_t lgthres);
@@ -237,7 +237,7 @@ class BMA150 {
         // MOTION_THRS register
         uint8_t getMotionThreshold();
         void  setMotionThreshold(uint8_t mot_thres);
-        
+
         // HYSTERESIS register
         uint8_t getLGHysteresis();
         void  setLGHysteresis(uint8_t lg_hys);
@@ -245,23 +245,23 @@ class BMA150 {
         void  setHGHysteresis(uint8_t hg_hys);
         uint8_t getMotionDuration();
         void  setMotionDuration(uint8_t mot_dur);
-        
+
         // CUSTOMER registers
         uint8_t getCustom1();
         void setCustom1(uint8_t custom1);
         uint8_t getCustom2();
         void setCustom2(uint8_t custom2);
-        
+
         // RANGE / BANDWIDTH registers
         uint8_t getRange();
         void setRange(uint8_t range);
         uint8_t getBandwidth();
         void setBandwidth(uint8_t bandwidth);
-        
+
         // OFFS_GAIN registers
-        
+
         // OFFSET registers
-        
+
         private:
         uint8_t devAddr;
         uint8_t buffer[6];

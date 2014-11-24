@@ -134,7 +134,7 @@ class HMC5843 {
     public:
         HMC5843();
         HMC5843(uint8_t address);
-        
+
         void initialize();
         bool testConnection();
 

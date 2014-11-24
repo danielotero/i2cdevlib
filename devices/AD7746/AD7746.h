@@ -28,7 +28,7 @@ THE SOFTWARE.
 
 
 #define AD7746_ADDRESS           0x48
-#define AD7746_DEFAULT_ADDRESS   AD7746_ADDRESS           
+#define AD7746_DEFAULT_ADDRESS   AD7746_ADDRESS
 
 
 #define AD7746_RA_STATUS                 0x00 // Status
@@ -44,8 +44,8 @@ THE SOFTWARE.
 #define AD7746_RA_CONFIGURATION          0x0A // Configuration
 #define AD7746_RA_CAP_DAC_A              0x0B // Cap DAC A
 #define AD7746_RA_CAP_DAC_B              0x0C // Cap DAC B
-#define AD7746_RA_CAP_OFF_H              0x0D 
-#define AD7746_RA_CAP_OFF_L              0x0E 
+#define AD7746_RA_CAP_OFF_H              0x0D
+#define AD7746_RA_CAP_OFF_L              0x0E
 #define AD7746_RA_CAP_GAIN_H             0x0F
 #define AD7746_RA_CAP_GAIN_L             0x10
 #define AD7746_RA_VOLT_GAIN_H            0x11
@@ -84,8 +84,8 @@ THE SOFTWARE.
 #define AD7746_VTMD_VIN                  (1 << AD7746_VTMD_BIT_1) | (1 << AD7746_VTMD_BIT_0)
 
 // Exc Setup
-#define AD7746_CLKCTRL_BIT		         7 
-#define AD7746_EXCON_BIT		         6                                            
+#define AD7746_CLKCTRL_BIT		         7
+#define AD7746_EXCON_BIT		         6
 #define AD7746_EXCB_BIT		             5
 #define AD7746_INV_EXCB_BIT		         4
 #define AD7746_EXCA_BIT		             3
@@ -155,17 +155,17 @@ class AD7746 {
 
         void initialize();
         bool testConnection();
-        void reset(); 
+        void reset();
 
         uint32_t getCapacitance();
-    
+
         void writeCapSetupRegister(uint8_t data);
         void writeVtSetupRegister(uint8_t data);
         void writeExcSetupRegister(uint8_t data);
         void writeConfigurationRegister(uint8_t data);
         void writeCapDacARegister(uint8_t data);
         void writeCapDacBRegister(uint8_t data);
-        
+
 
     private:
         uint8_t devAddr;

@@ -83,10 +83,10 @@ class TCA6424A {
     public:
         TCA6424A();
         TCA6424A(uint8_t address);
-        
+
         void initialize();
         bool testConnection();
-        
+
         // INPUT* registers (x0h - x2h)
         bool readPin(uint16_t pin);
         uint8_t readBank(uint8_t bank);
