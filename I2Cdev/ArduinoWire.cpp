@@ -21,15 +21,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 =============================================== */
 
-#if ARDUINO < 100
-    #include <WProgram.h>
-#else
-    #include <Arduino.h>
-#endif
-
-#include <Wire.h>
-
 #include "I2Cdev.h"
+
+#include <Arduino.h>
+#include <Wire.h>
 
 /** Read multiple bytes from an 8-bit device register.
  * @param devAddr I2C slave device address
