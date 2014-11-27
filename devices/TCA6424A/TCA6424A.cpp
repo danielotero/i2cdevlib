@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 =============================================== */
 
-#include "TCA6424A.h"
+#include <i2cdev/TCA6424A.h>
 
 /** Default constructor, uses default I2C address.
  * @see TCA6424A_DEFAULT_ADDRESS

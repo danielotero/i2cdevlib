@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 =============================================== */
 
-#include "HMC5883L.h"
+#include <i2cdev/HMC5883L.h>
 
 /** Default constructor, uses default I2C address.
  * @see HMC5883L_DEFAULT_ADDRESS

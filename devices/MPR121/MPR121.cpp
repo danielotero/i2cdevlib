@@ -21,8 +21,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 =============================================== */
 
-#include "MPR121.h"
-#include "I2Cdev.h"
+#include <i2cdev/MPR121.h>
+#include <I2Cdev.h>
 
 MPR121::MPR121(uint8_t address) :
   m_devAddr(address)

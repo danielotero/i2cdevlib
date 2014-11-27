@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 =============================================== */
 
-#include "ITG3200.h"
+#include <i2cdev/ITG3200.h>
 
 /** Default constructor, uses default I2C address.
  * @see ITG3200_DEFAULT_ADDRESS

@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 =============================================== */
 
-#include "ADXL345.h"
+#include <i2cdev/ADXL345.h>
 
 /** Default constructor, uses default I2C address.
  * @see ADXL345_DEFAULT_ADDRESS

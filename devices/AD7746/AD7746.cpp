@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 =============================================== */
 
-#include "AD7746.h"
+#include <i2cdev/AD7746.h>
 
 #include <Arduino.h>
 

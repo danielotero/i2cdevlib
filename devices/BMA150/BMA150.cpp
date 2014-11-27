@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 =============================================== */
 
-#include "BMA150.h"
+#include <i2cdev/BMA150.h>
 
 /** Default constructor, uses default I2C address.
  * @see BMA150_DEFAULT_ADDRESS

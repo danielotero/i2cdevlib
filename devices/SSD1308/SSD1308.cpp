@@ -21,8 +21,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 =============================================== */
 
-#include "SSD1308.h"
-#include "I2Cdev.h"
+#include <i2cdev/SSD1308.h>
+#include <I2Cdev.h>
 
 //#ifdef SSD1308_USE_FONT
 #include "fixedWidthFont.h"

@@ -22,7 +22,7 @@ THE SOFTWARE.
 ===============================================
 */
 
-#include "MPU6050.h"
+#include <i2cdev/MPU6050.h>
 
 #include <stdlib.h>
 #include <string.h>

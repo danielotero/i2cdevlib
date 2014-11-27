@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 =============================================== */
 
-#include "BMP085.h"
+#include <i2cdev/BMP085.h>
 
 #include <math.h>
 

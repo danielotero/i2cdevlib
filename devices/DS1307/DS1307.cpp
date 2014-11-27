@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 =============================================== */
 
-#include "DS1307.h"
+#include <i2cdev/DS1307.h>
 
 /** Default constructor, uses default I2C address.
  * @see DS1307_DEFAULT_ADDRESS

@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 =============================================== */
 
-#include "ADS1115.h"
+#include <i2cdev/ADS1115.h>
 
 /** Default constructor, uses default I2C address.
  * @see ADS1115_DEFAULT_ADDRESS
