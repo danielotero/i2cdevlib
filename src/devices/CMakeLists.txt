@@ -1,30 +1,18 @@
-add_library(AD7746
-            AD7746/AD7746.cpp)
-add_library(ADS1115
-            ADS1115/ADS1115.cpp)
-add_library(ADXL345
-            ADXL345/ADXL345.cpp)
-add_library(AK8975
-            AK8975/AK8975.cpp)
-add_library(BMA150
-            BMA150/BMA150.cpp)
-add_library(BMP085
-            BMP085/BMP085.cpp)
-add_library(DS1307
-            DS1307/DS1307.cpp)
-add_library(HMC5843
-            HMC5843/HMC5843.cpp)
-add_library(HMC5883L
-            HMC5883L/HMC5883L.cpp)
-add_library(ITG3200
-            ITG3200/ITG3200.cpp)
-add_library(L3G4200D
-            L3G4200D/L3G4200D.cpp)
-add_library(MPR121
-            MPR121/MPR121.cpp)
-add_library(MPU6050
-            MPU6050/MPU6050.cpp)
-add_library(SSD1308
-            SSD1308/SSD1308.cpp)
-add_library(TCA6424A
-            TCA6424A/TCA6424A.cpp)
+set(I2CDEV_DEVICES_SRCS
+        "${CMAKE_CURRENT_SOURCE_DIR}/AD7746/AD7746.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/ADS1115/ADS1115.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/ADXL345/ADXL345.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/AK8975/AK8975.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/BMA150/BMA150.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/BMP085/BMP085.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/DS1307/DS1307.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/HMC5843/HMC5843.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/HMC5883L/HMC5883L.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/ITG3200/ITG3200.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/L3G4200D/L3G4200D.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/MPR121/MPR121.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/MPU6050/MPU6050.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/SSD1308/SSD1308.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/TCA6424A/TCA6424A.cpp"
+    PARENT_SCOPE
+)
