@@ -1,0 +1,30 @@
+add_library(AD7746
+            AD7746/AD7746.cpp)
+add_library(ADS1115
+            ADS1115/ADS1115.cpp)
+add_library(ADXL345
+            ADXL345/ADXL345.cpp)
+add_library(AK8975
+            AK8975/AK8975.cpp)
+add_library(BMA150
+            BMA150/BMA150.cpp)
+add_library(BMP085
+            BMP085/BMP085.cpp)
+add_library(DS1307
+            DS1307/DS1307.cpp)
+add_library(HMC5843
+            HMC5843/HMC5843.cpp)
+add_library(HMC5883L
+            HMC5883L/HMC5883L.cpp)
+add_library(ITG3200
+            ITG3200/ITG3200.cpp)
+add_library(L3G4200D
+            L3G4200D/L3G4200D.cpp)
+add_library(MPR121
+            MPR121/MPR121.cpp)
+add_library(MPU6050
+            MPU6050/MPU6050.cpp)
+add_library(SSD1308
+            SSD1308/SSD1308.cpp)
+add_library(TCA6424A
+            TCA6424A/TCA6424A.cpp)
