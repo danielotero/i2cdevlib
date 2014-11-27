@@ -23,6 +23,8 @@ THE SOFTWARE.
 
 #include "AD7746.h"
 
+#include <Arduino.h>
+
 /** Default constructor, uses default I2C address.
  * @see AD7746_DEFAULT_ADDRESS
  */
@@ -72,7 +74,7 @@ void AD7746::reset() {
 #endif
     
     //TODO: Try to fix this delay without Arduino import
-    //delay(1); //wait a tad for reboot
+    delay(1); //wait a tad for reboot
 }
 
 
