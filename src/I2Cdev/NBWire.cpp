@@ -53,8 +53,9 @@ Thumbs Up!
 Gene Knight
 
 */
-#include "NBWire.h"
-#include "I2Cdev.h"
+
+#include <NBWire.h>
+#include <I2Cdev.h>
 
 #include <stdlib.h>
 #include <avr/io.h>
